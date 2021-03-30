@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core'
 import { BrowserModule } from '@angular/platform-browser'
 
 import { AppRoutingModule } from './app-routing.module'
+import { AppMaterialModule } from './modules/app-material/app-material.module'
 
 import { AppComponent } from './app.component'
 
@@ -15,6 +16,7 @@ import { FlagScatteredComponent } from './components/flag-scattered-container/fl
 
 import { FlagConsolidatedContainerComponent } from './components/flag-consolidated-container/flag-consolidated-container.component'
 import { FlagConsolidatedComponent } from './components/flag-consolidated-container/flag-consolidated/flag-consolidated.component'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import { FlagConsolidatedComponent } from './components/flag-consolidated-contai
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    AppMaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]

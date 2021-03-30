@@ -1,1 +1,15 @@
-<p>flag-shell works!</p>
+<mat-toolbar color="primary"
+             class="mat-elevation-z6">
+  <mat-toolbar-row>
+    <button mat-flat-button
+            color="primary"
+            routerLink="/single">Single Flag</button>
+    <button mat-flat-button
+            color="primary"
+            routerLink="/scattered">Scattered Flags</button>
+    <button mat-flat-button
+            color="primary"
+            routerLink="/consolidated">Consolidated Flags</button>
+  </mat-toolbar-row>
+</mat-toolbar>
+<router-outlet></router-outlet>
