@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core'
 
 @Component({
   selector: 'app-flag-single',
@@ -12,4 +12,11 @@ export class FlagSingleComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  immediateToggle(): void {
+
+  }
+
+  delayedToggle(): void {
+
+  }
 }

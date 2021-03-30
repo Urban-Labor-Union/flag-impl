@@ -1,0 +1,19 @@
+div.container {
+  padding-top: 72px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 32px;
+
+  div.control {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 16px;
+    justify-content: center;
+  }
+
+  div.result {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 16px;
+  }
+}

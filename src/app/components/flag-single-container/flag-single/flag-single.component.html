@@ -1,1 +1,22 @@
-<p>flag-single works!</p>
+<div class="container">
+  <div class="control">
+    <button mat-flat-button
+            (click)="immediateToggle()">Toggle Content Immediately</button>
+    <!-- use flag to disable button until toggle is complete -->
+    <button mat-flat-button
+            (click)="delayedToggle()">Toggle Content with Delay</button>
+  </div>
+  <div class="result">
+
+    <ng-container>
+      <!-- Use flag to toggle content immediately -->
+      <p>This content will be toggled immediately</p>
+    </ng-container>
+
+    <ng-container>
+      <!-- use flag to toggle content after delay -->
+      <p>This content will be toggled after a delay of 2000ms</p>
+    </ng-container>
+
+  </div>
+</div>
