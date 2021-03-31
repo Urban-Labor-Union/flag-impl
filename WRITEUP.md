@@ -24,6 +24,14 @@ https://dev.to/mquanit/concept-of-smart-dumb-components-in-angular-2fom
 
 ### Delete the html and scss files in container component
 
+## Single component description
+
+## Argument of type 'Event' is not assignable to parameter of type 'boolean' - create an EscapeType
+
+## Single component implementation
+
+## Single component Drawback
+
 ## Scattered component description
 
 ## Scattered component implementation

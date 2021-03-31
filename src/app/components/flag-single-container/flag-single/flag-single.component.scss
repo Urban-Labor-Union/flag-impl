@@ -1,19 +1,30 @@
 div.container {
   padding-top: 72px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
   grid-gap: 32px;
 
-  div.control {
+  div#immediate {
     display: grid;
-    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     grid-gap: 16px;
-    justify-content: center;
+    justify-items: center;
+    align-items: center;
+
+    span {
+      justify-self: flex-start;
+    }
   }
 
-  div.result {
+  div#delay {
     display: grid;
-    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     grid-gap: 16px;
+    justify-items: center;
+    align-items: center;
+
+    span {
+      justify-self: flex-start;
+    }
   }
 }
