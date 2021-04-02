@@ -3,10 +3,15 @@
   <div id="immediate">
     <button mat-raised-button
             color="primary"
-            (click)="immediateToggle()">Toggle Content Immediately</button>
+            (click)="immediateToggle()">Toggle Immediately</button>
 
     <ng-container *ngIf="immediateVisible">
-      <span>This content will be toggled immediately</span>
+      <div class="content">
+        <h2>This content will be toggled immediately</h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam illo qui totam.
+          Iusto voluptatem reiciendis accusamus placeat atque sequi laudantium beatae! Adipisci
+          exercitationem consectetur expedita harum labore blanditiis recusandae saepe!</p>
+      </div>
     </ng-container>
   </div>
 
@@ -17,21 +22,37 @@
             (click)="delayedToggle()">
 
       <ng-container *ngIf="buttonDisabled; else buttonEnabled">Toggling</ng-container>
-      <ng-template #buttonEnabled>Toggle Content with Delay</ng-template>
+      <ng-template #buttonEnabled>Toggle Delay</ng-template>
 
     </button>
 
     <ng-container *ngIf="delayVisible">
-      <span>This content will be toggled after a delay of 1000ms</span>
+      <div class="content">
+        <h2>This content will be toggled after a delay of 1000ms</h2>
+      </div>
     </ng-container>
   </div>
 
   <div id="alternate">
-    <ng-container *ngIf="alternateVisible">
-      <span>This content will toggle <span class="text-monospace">5</span> times at every <span
-              class="text-monospace">2000ms</span> (<span class="text-monospace">{{ counter
-          }}</span> / <span class="text-monospace">5</span>)</span>
-    </ng-container>
+    <div class="content">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>Alternating Content</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <h2>The below content will toggle <span class="text-monospace">5</span> times every
+            <span class="text-monospace">2000ms</span> (<span class="text-monospace">{{ counter
+              }}</span> / <span class="text-monospace">5</span>)
+          </h2>
+          <ng-container *ngIf="alternateVisible">
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam illo qui totam.
+              Iusto voluptatem reiciendis accusamus placeat atque sequi laudantium beatae!
+              Adipisci exercitationem consectetur expedita harum labore blanditiis recusandae
+              saepe!</p>
+          </ng-container>
+        </mat-card-content>
+      </mat-card>
+    </div>
   </div>
 
 </div>

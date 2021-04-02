@@ -1,0 +1,55 @@
+div.container {
+  padding: 72px 32px 0px;
+  display: grid;
+  grid-gap: 32px;
+  grid-template-columns: 1fr 1fr;
+  width: 75%;
+  margin: 0 auto;
+
+  div.list-holder {
+    div.list-items-holder {
+      display: grid;
+      grid-gap: 16px;
+    }
+  }
+
+  div.item-holder {
+    display: grid;
+    grid-gap: 16px;
+  }
+
+  div.loader-container {
+    display: grid;
+    place-content: center;
+    place-items: center;
+    height: 100%;
+
+    div.loader {
+      border: 16px solid #f3f3f3;
+      border-top: 16px solid #3f51b5;
+      border-radius: 50%;
+      animation: spin 2s linear infinite;
+
+      &#item {
+        width: 120px;
+        height: 120px;
+      }
+
+      &#action {
+        border-width: 4px;
+        border-top-width: 4px;
+        width: 30px;
+        height: 30px;
+      }
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  }
+}

@@ -1,47 +1,47 @@
 div.container {
-  padding-top: 72px;
+  padding: 72px 32px 0px;
   display: grid;
-  grid-template-rows: 1fr 1fr;
   grid-gap: 32px;
+  grid-template-columns: 1fr 1fr;
+  align-items: flex-start;
+  width: 75%;
+  margin: 0 auto;
+
+  div#immediate,
+  div#delay {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 16px;
+    align-items: flex-start;
+  }
 
   div#immediate {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 16px;
-    justify-items: center;
-    align-items: center;
-
-    span {
-      justify-self: flex-start;
-    }
+    grid-area: 1/1/2/2;
   }
 
   div#delay {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 16px;
-    justify-items: center;
-    align-items: center;
-
-    span {
-      justify-self: flex-start;
-    }
+    grid-area: 2/1/3/2;
   }
 
   div#alternate {
-    position: relative;
     display: grid;
     place-items: center;
-    padding: 72px 0px;
-    background-color: #00000010;
+    place-content: center;
+    grid-area: 1/2/3/3;
 
-    span {
-      position: absolute;
+    span.text-monospace {
+      position: relative;
+      font-family: "Fira Code", "Consolas", monospace;
+    }
+  }
 
-      &.text-monospace {
-        position: relative;
-        font-family: "Fira Code", "Consolas", monospace;
-      }
+  div.content {
+    display: grid;
+    grid-template-rows: auto 1fr;
+
+    h2 {
+      text-align: center;
+      margin-bottom: 8px;
     }
   }
 }

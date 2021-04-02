@@ -1,1 +1,76 @@
-<p>flag-consolidated works!</p>
+<div class="container">
+  <div class="list-holder">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Select an Item</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="list-items-holder">
+          <ng-container *ngFor="let singleItem of itemList.items">
+            <button mat-flat-button
+                    color="primary"
+                    (click)="loadItem(singleItem.id)">{{ singleItem.title }}</button>
+          </ng-container>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div class="item-holder">
+
+    <div class="item">
+      <ng-container *ngIf="!componentFlags.item.available">
+        <p>Please select an Item from the list</p>
+      </ng-container>
+      <ng-container *ngIf="!componentFlags.item.progress; else loadingItem">
+        <ng-container *ngIf="componentFlags.item.success">
+          <mat-card>
+            <mat-card-header>
+              <mat-card-title>{{ item.title }}</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <p>{{ item.description }}</p>
+            </mat-card-content>
+            <mat-card-actions>
+              <button mat-icon-button
+                      color="primary"
+                      (click)="triggerSuccessAction()">
+                <mat-icon>done</mat-icon>
+              </button>
+              <button mat-icon-button
+                      color="warn"
+                      (click)="triggerFailAction()">
+                <mat-icon>close</mat-icon>
+              </button>
+            </mat-card-actions>
+          </mat-card>
+        </ng-container>
+      </ng-container>
+      <ng-template #loadingItem>
+        <div class="loader-container">
+          <div class="loader"
+               id="item"></div>
+        </div>
+      </ng-template>
+    </div>
+
+    <div class="action-result">
+      <ng-container *ngIf="!componentFlags.action.progress; else loadingAction">
+        <ng-container *ngIf="componentFlags.action.success">
+          <p>Action Successful</p>
+        </ng-container>
+        <ng-container *ngIf="componentFlags.action.fail">
+          <p style="color: #f44336;">Action Unsuccessful</p>
+        </ng-container>
+      </ng-container>
+      <ng-template #loadingAction>
+        <div class="loader-container">
+          <div class="loader"
+               id="action"></div>
+        </div>
+      </ng-template>
+    </div>
+
+  </div>
+
+</div>

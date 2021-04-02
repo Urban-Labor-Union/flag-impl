@@ -20,7 +20,7 @@ export class FlagSingleComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this._visible$.subscribe(_ => { console.log({ _ }) })
+    this._visible$.subscribe(visible => { console.log({ visible }) })
   }
 
   toggle(): void {

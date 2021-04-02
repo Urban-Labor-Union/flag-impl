@@ -39,12 +39,12 @@ export class FlagScatteredComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this._immediateVisible$.subscribe(_ => { console.log({ _ }) })
-    this._delayVisible$.subscribe(_ => { console.log({ _ }) })
-    this._buttonDisabled$.subscribe(_ => { console.log({ _ }) })
-    this._alternateVisible$.subscribe(_ => {
-      if (_) this.counter += 1
-      console.log({ _ })
+    this._immediateVisible$.subscribe(immediateVisible => { console.log({ immediateVisible }) })
+    this._delayVisible$.subscribe(delayVisible => { console.log({ delayVisible }) })
+    this._buttonDisabled$.subscribe(buttonDisabled => { console.log({ buttonDisabled }) })
+    this._alternateVisible$.subscribe(alternateVisible => {
+      if (alternateVisible) this.counter += 1
+      console.log({ alternateVisible })
     })
     this.alternateToggle()
   }

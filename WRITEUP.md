@@ -26,8 +26,6 @@ https://dev.to/mquanit/concept-of-smart-dumb-components-in-angular-2fom
 
 ## Single component description
 
-## Argument of type 'Event' is not assignable to parameter of type 'boolean' - create an EscapeType
-
 ## Single component implementation
 
 ## Single component Drawback
@@ -41,5 +39,4 @@ https://dev.to/mquanit/concept-of-smart-dumb-components-in-angular-2fom
 ## Consolidated component description
 
 ## Consolidated component implementation
-
-## Consolidated component Drawback
+https://www.w3schools.com/howto/howto_css_loader.asp
