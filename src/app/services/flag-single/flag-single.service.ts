@@ -1,60 +1,27 @@
 import { Injectable } from '@angular/core'
 
-import { BehaviorSubject, Observable, timer } from 'rxjs'
-import { take } from 'rxjs/operators'
+import { BehaviorSubject, Observable } from 'rxjs'
 
 @Injectable({
   providedIn: 'root'
 })
 export class FlagSingleService {
 
-  private _immediateVisible$ = new BehaviorSubject<boolean>(true)
-  private _immediateVisible: boolean = false
-
-  private _delayVisible$ = new BehaviorSubject<boolean>(true)
-  private _delayVisible: boolean = false
-
-  private _buttonDisabled$ = new BehaviorSubject<boolean>(false)
-  private _buttonDisabled: boolean = false
+  private _visible$ = new BehaviorSubject<boolean>(true)
+  private _visible: boolean = true
 
   constructor() { }
 
-  setImmediateVisible(_: boolean): void {
-    this._immediateVisible = _
-    this._immediateVisible$.next(this._immediateVisible)
+  toggleVisible(): void {
+    this.setVisible(!this._visible)
   }
 
-  watchImmediateVisible$(): Observable<boolean> {
-    return this._immediateVisible$.asObservable()
+  setVisible(_: boolean): void {
+    this._visible = _
+    this._visible$.next(this._visible)
   }
 
-  setDelayVisible(_: boolean): void {
-    this._delayVisible = _
-    this._delayVisible$.next(this._delayVisible)
+  watchVisible$(): Observable<boolean> {
+    return this._visible$.asObservable()
   }
-
-  watchDelayVisible$(): Observable<boolean> {
-    return this._delayVisible$.asObservable()
-  }
-
-  toggleDelayVisible(_: boolean): void {
-    this.setButtonFlag(true)
-
-    timer(2000).pipe(take(1)).subscribe(
-      __ => {
-        this.setDelayVisible(!_)
-        this.setButtonFlag(false)
-      }
-    )
-  }
-
-  setButtonFlag(_: boolean): void {
-    this._buttonDisabled = _
-    this._buttonDisabled$.next(this._buttonDisabled)
-  }
-
-  watchButtonFlag$(): Observable<boolean> {
-    return this._buttonDisabled$.asObservable()
-  }
-
 }

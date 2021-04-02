@@ -6,33 +6,22 @@ import { FlagSingleService } from 'src/app/services/flag-single/flag-single.serv
 
 @Component({
   selector: 'app-flag-single-container',
-  template: `<app-flag-single [immediateVisible]         = "immediateVisible$ | async"
-                              [delayVisible]             = "delayVisible$     | async"
-                              [buttonDisabled]           = "buttonDisabled$   | async"
-                              (toggleImmediateVisible$)  = "toggleImmediateVisible($event)"
-                              (toggleDelayVisible$)      = "toggleDelayVisible($event)"></app-flag-single>`
+  template: `<app-flag-single [visible]         = "visible$ | async"
+                              (toggleVisible$)  = "toggleVisible()"></app-flag-single>`
 })
 export class FlagSingleContainerComponent implements OnInit {
 
-  immediateVisible$: Observable<boolean>
-  delayVisible$: Observable<boolean>
-  buttonDisabled$: Observable<boolean>
+  visible$: Observable<boolean>
 
   constructor(
     private _flagService: FlagSingleService
   ) { }
 
   ngOnInit(): void {
-    this.immediateVisible$ = this._flagService.watchImmediateVisible$()
-    this.delayVisible$ = this._flagService.watchDelayVisible$()
-    this.buttonDisabled$ = this._flagService.watchButtonFlag$()
+    this.visible$ = this._flagService.watchVisible$()
   }
 
-  toggleImmediateVisible($: boolean): void {
-    this._flagService.setImmediateVisible(!$)
-  }
-
-  toggleDelayVisible($: boolean): void {
-    this._flagService.toggleDelayVisible($)
+  toggleVisible(): void {
+    this._flagService.toggleVisible()
   }
 }

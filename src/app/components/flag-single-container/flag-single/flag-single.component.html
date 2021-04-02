@@ -5,24 +5,8 @@
             color="primary"
             (click)="immediateToggle()">Toggle Content Immediately</button>
 
-    <ng-container *ngIf="immediateVisible">
+    <ng-container *ngIf="visible">
       <span>This content will be toggled immediately</span>
-    </ng-container>
-  </div>
-
-  <div id="delay">
-    <button mat-flat-button
-            color="primary"
-            [disabled]="buttonDisabled"
-            (click)="delayedToggle()">
-
-      <ng-container *ngIf="buttonDisabled; else buttonEnabled">Toggling</ng-container>
-      <ng-template #buttonEnabled>Toggle Content with Delay</ng-template>
-
-    </button>
-
-    <ng-container *ngIf="delayVisible">
-      <span>This content will be toggled after a delay of 2000ms</span>
     </ng-container>
   </div>
 
