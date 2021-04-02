@@ -1,13 +1,15 @@
 <div class="container">
+  <button mat-raised-button
+          color="primary"
+          (click)="toggle()">Toggle Content</button>
 
-  <div id="immediate">
-    <button mat-flat-button
-            color="primary"
-            (click)="immediateToggle()">Toggle Content Immediately</button>
-
-    <ng-container *ngIf="visible">
-      <span>This content will be toggled immediately</span>
-    </ng-container>
-  </div>
+  <ng-container *ngIf="visible">
+    <div class="content">
+      <h2>This content will be toggled immediately</h2>
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam illo qui totam.
+        Iusto voluptatem reiciendis accusamus placeat atque sequi laudantium beatae! Adipisci
+        exercitationem consectetur expedita harum labore blanditiis recusandae saepe!</p>
+    </div>
+  </ng-container>
 
 </div>

@@ -23,7 +23,7 @@ export class FlagSingleComponent implements OnInit {
     this._visible$.subscribe(_ => { console.log({ _ }) })
   }
 
-  immediateToggle(): void {
+  toggle(): void {
     this.toggleVisible$.emit()
   }
 }
